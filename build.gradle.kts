@@ -9,13 +9,9 @@ buildscript {
 			"1.2.0"
 		)
 	}
-	repositories {
-		google()
-		mavenCentral()
-	}
-	dependencies {
-		classpath("com.android.tools.build:gradle:7.3.0")
-		classpath("org.jetbrains.dokka:dokka-gradle-plugin:${rootProject.extra["kotlin_version"]}")
-		classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${rootProject.extra["kotlin_version"]}")
-	}
+}
+plugins {
+	id("com.android.library") version "7.3.0" apply false
+	id("org.jetbrains.kotlin.android") version "1.7.0" apply false
+	id("org.jetbrains.dokka") version "1.7.0" apply false
 }
