@@ -1,17 +1,17 @@
 plugins {
-	id("com.android.application")
-	id("kotlin-android")
+	alias(libs.plugins.android.application)
+	alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
-	compileSdk = 33
+	compileSdk = libs.versions.compileSdk.get().toInt()
 	
 	defaultConfig {
 		applicationId = "com.dsc.formbuilder"
-		minSdk = 27
-		targetSdk = 33
-		versionCode = 1
-		versionName = "1.0"
+		minSdk = libs.versions.minSdk.get().toInt()
+		targetSdk = libs.versions.targetSdk.get().toInt()
+		versionCode = libs.versions.appVersionCode.get().toInt()
+		versionName = libs.versions.appVersionName.get()
 		
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 	}
@@ -26,17 +26,18 @@ android {
 		}
 	}
 	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility(libs.versions.jvmTarget.get())
+		targetCompatibility(libs.versions.jvmTarget.get())
 	}
+	
 	kotlinOptions {
-		jvmTarget = "1.8"
+		jvmTarget = libs.versions.jvmTarget.get()
 	}
 	buildFeatures {
 		compose = true
 	}
 	composeOptions {
-		kotlinCompilerExtensionVersion = rootProject.extra["compose_version"] as String
+		kotlinCompilerExtensionVersion = libs.versions.compose.get()
 	}
 	packagingOptions {
 		resources {
@@ -49,19 +50,19 @@ dependencies {
 	
 	implementation(project(":form-builder"))
 	
-	implementation("androidx.core:core-ktx:1.8.0")
-	implementation("androidx.appcompat:appcompat:1.5.0")
-	implementation("androidx.activity:activity-compose:1.5.1")
-	implementation("com.google.android.material:material:1.6.1")
-	implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.5.1")
+	implementation(libs.androidx.core.ktx)
+	implementation(libs.androidx.appcompat)
+	implementation(libs.androidx.activity.compose)
+	implementation(libs.android.material)
+	implementation(libs.androidx.lifecycle.runtime)
 	
-	implementation("androidx.compose.ui:ui:${rootProject.extra["compose_version"]}")
-	implementation("androidx.compose.material:material:${rootProject.extra["compose_version"]}")
-	implementation("androidx.compose.animation:animation:${rootProject.extra["compose_version"]}")
-	implementation("androidx.compose.ui:ui-tooling-preview:${rootProject.extra["compose_version"]}")
+	implementation(libs.androidx.compose.ui)
+	implementation(libs.androidx.compose.material)
+	implementation(libs.androidx.compose.animation)
+	implementation(libs.androidx.compose.ui.tooling.preview)
 	
-	debugImplementation("androidx.compose.ui:ui-tooling:${rootProject.extra["compose_version"]}")
+	debugImplementation(libs.androidx.compose.ui.tooling)
 	
-	implementation("androidx.compose.material3:material3:1.0.0-beta01")
-	implementation("androidx.compose.material3:material3-window-size-class:1.0.0-beta01")
+	implementation(libs.androidx.compose.material3)
+	implementation(libs.androidx.compose.material3.window.size)
 }

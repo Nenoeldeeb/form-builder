@@ -1,16 +1,16 @@
 plugins {
-	id("com.android.library")
-	id("org.jetbrains.kotlin.android")
+	alias(libs.plugins.android.library)
+	alias(libs.plugins.jetbrains.kotlin.android)
+	alias(libs.plugins.jetbrains.dokka)
 	id("maven-publish")
-	id("org.jetbrains.dokka")
 }
 
 android {
-	compileSdk = 32
+	compileSdk = libs.versions.compileSdk.get().toInt()
 	
 	defaultConfig {
-		minSdk = 21
-		targetSdk = 32
+		minSdk = libs.versions.minSdk.get().toInt()
+		targetSdk = libs.versions.targetSdk.get().toInt()
 		
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 		consumerProguardFiles("consumer-rules.pro")
@@ -27,12 +27,12 @@ android {
 	}
 	
 	compileOptions {
-		sourceCompatibility = JavaVersion.VERSION_1_8
-		targetCompatibility = JavaVersion.VERSION_1_8
+		sourceCompatibility(libs.versions.jvmTarget.get())
+		targetCompatibility(libs.versions.jvmTarget.get())
 	}
 	
 	kotlinOptions {
-		jvmTarget = "1.8"
+		jvmTarget = libs.versions.jvmTarget.get()
 	}
 	
 	testOptions {
@@ -48,21 +48,21 @@ android {
 	}
 	
 	composeOptions {
-		kotlinCompilerExtensionVersion = rootProject.extra["compose_version"] as String
+		kotlinCompilerExtensionVersion = libs.versions.compose.get()
 	}
 }
 
 dependencies {
 	// Testing
-	testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
-	testImplementation("org.mockito.kotlin:mockito-kotlin:4.0.0")
-	testImplementation("org.junit.jupiter:junit-jupiter-params:5.8.1")
+	testImplementation(libs.junit.jupiter)
+	testImplementation(libs.mockito.kotlin)
+	testImplementation(libs.junit.jupiter.params)
 	
 	// Compose
-	implementation("androidx.activity:activity-compose:1.5.1")
+	implementation(libs.androidx.activity.compose)
 	
 	// Kotlin reflection
-	implementation("org.jetbrains.kotlin:kotlin-reflect:${rootProject.extra["kotlin_version"]}")
+	implementation(libs.jetbrains.kotlin.reflection)
 }
 
 
@@ -75,7 +75,7 @@ afterEvaluate {
 				
 				groupId = "com.github.dsc-jkuat"
 				artifactId = "form-builder"
-				version = "1.0.1"
+				version = libs.versions.libVersionName.get()
 			}
 		}
 	}
