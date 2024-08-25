@@ -2,6 +2,7 @@ plugins {
 	alias(libs.plugins.android.library)
 	alias(libs.plugins.jetbrains.kotlin.android)
 	alias(libs.plugins.jetbrains.dokka)
+	alias(libs.plugins.jetbrains.compose.compiler)
 	id("maven-publish")
 }
 
@@ -10,8 +11,6 @@ android {
 	
 	defaultConfig {
 		minSdk = libs.versions.minSdk.get().toInt()
-		targetSdk = libs.versions.targetSdk.get().toInt()
-		
 		testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 		consumerProguardFiles("consumer-rules.pro")
 	}
@@ -31,8 +30,8 @@ android {
 		targetCompatibility(libs.versions.jvmTarget.get())
 	}
 	
-	kotlinOptions {
-		jvmTarget = libs.versions.jvmTarget.get()
+	kotlin {
+		jvmToolchain(libs.versions.jvmTarget.get().toInt())
 	}
 	
 	testOptions {
@@ -46,10 +45,7 @@ android {
 	buildFeatures {
 		compose = true
 	}
-	
-	composeOptions {
-		kotlinCompilerExtensionVersion = libs.versions.compose.get()
-	}
+	namespace = "com.dsc.form_builder"
 }
 
 dependencies {

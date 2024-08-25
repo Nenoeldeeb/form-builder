@@ -1,6 +1,7 @@
 plugins {
 	alias(libs.plugins.android.application)
 	alias(libs.plugins.jetbrains.kotlin.android)
+	alias(libs.plugins.jetbrains.compose.compiler)
 }
 
 android {
@@ -30,26 +31,25 @@ android {
 		targetCompatibility(libs.versions.jvmTarget.get())
 	}
 	
-	kotlinOptions {
-		jvmTarget = libs.versions.jvmTarget.get()
+	kotlin {
+		jvmToolchain(libs.versions.jvmTarget.get().toInt())
 	}
 	buildFeatures {
 		compose = true
 	}
-	composeOptions {
-		kotlinCompilerExtensionVersion = libs.versions.compose.get()
-	}
-	packagingOptions {
+	packaging {
 		resources {
 			excludes += "/META-INF/{AL2.0,LGPL2.1}"
 		}
 	}
+	namespace = "com.dsc.formbuilder"
 }
 
 dependencies {
 	
 	implementation(project(":form-builder"))
 	
+	implementation(platform(libs.androidx.compose.bom))
 	implementation(libs.androidx.core.ktx)
 	implementation(libs.androidx.appcompat)
 	implementation(libs.androidx.activity.compose)
