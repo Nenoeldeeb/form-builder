@@ -14,7 +14,7 @@ In the root `build.gradle` file add the following:
 
 ```kotlin
 repositories {
-    maven { url "https://jitpack.io" }
+    maven { url = uri("https://jitpack.io") }
 }
 ```
 
