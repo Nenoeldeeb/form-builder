@@ -69,7 +69,7 @@ afterEvaluate {
 			create<MavenPublication>("release") {
 				from(components["release"])
 				
-				groupId = "com.github.dsc-jkuat"
+				groupId = "com.github.Nenoeldeeb"
 				artifactId = "form-builder"
 				version = libs.versions.libVersionName.get()
 			}
