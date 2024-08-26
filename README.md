@@ -12,7 +12,7 @@ support for a form state so the library is used to provide a custom implementati
 
 In the root `build.gradle` file add the following:
 
-```groovy
+```kotlin
 repositories {
     maven { url "https://jitpack.io" }
 }
@@ -20,9 +20,9 @@ repositories {
 
 Then add the following to your module's `build.gradle`
 
-```groovy
+```kotlin
 dependencies {
-    implementation 'com.github.jkuatdsc:form-builder:${version}'
+    implementation("com.github.Nenoeldeeb:form-builder:${version}")
 }
 ```
 
