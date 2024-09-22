@@ -22,7 +22,7 @@ Then add the following to your module's `build.gradle`
 
 ```kotlin
 dependencies {
-    implementation("com.github.Nenoeldeeb:form-builder:${version}")
+    implementation("com.github.jkuatdsc:form-builder:${version}")
 }
 ```
 

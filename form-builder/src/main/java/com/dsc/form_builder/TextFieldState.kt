@@ -195,7 +195,7 @@ open class TextFieldState(
      * @param message the error message passed to [showError] to display if the [value] is empty. By default we use the [REQUIRED_MESSAGE] constant.
      */
     internal fun validateRequired(message: String): Boolean {
-        val valid = value.isNotEmpty()
+        val valid = value.isNotBlank()
         if (!valid) showError(message)
         return valid
     }

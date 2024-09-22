@@ -73,7 +73,7 @@ class SwitchState(
 	 * @return true if the switch is in the required state, false otherwise.
 	 */
 	@VisibleForTesting
-	fun validateRequired(message: String): Boolean {
+	internal fun validateRequired(message: String): Boolean {
 		// For a switch, "required" typically means it must be turned on
 		val valid = value
 		if (!valid) showError(message)

@@ -29,6 +29,7 @@ android {
 	compileOptions {
 		sourceCompatibility(libs.versions.jvmTarget.get())
 		targetCompatibility(libs.versions.jvmTarget.get())
+		isCoreLibraryDesugaringEnabled = true
 	}
 	
 	kotlin {
@@ -48,6 +49,8 @@ android {
 dependencies {
 	
 	implementation(project(":form-builder"))
+	// For using modern java 8 classes with older versions of android
+	coreLibraryDesugaring(libs.core.java8)
 	
 	implementation(platform(libs.androidx.compose.bom))
 	implementation(libs.androidx.core.ktx)

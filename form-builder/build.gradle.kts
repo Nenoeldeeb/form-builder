@@ -28,6 +28,7 @@ android {
 	compileOptions {
 		sourceCompatibility(libs.versions.jvmTarget.get())
 		targetCompatibility(libs.versions.jvmTarget.get())
+		isCoreLibraryDesugaringEnabled = true
 	}
 	
 	kotlin {
@@ -59,6 +60,9 @@ dependencies {
 	
 	// Kotlin reflection
 	implementation(libs.jetbrains.kotlin.reflection)
+
+	// For using modern java 8 classes with older versions of android
+	coreLibraryDesugaring(libs.core.java8)
 }
 
 
@@ -69,7 +73,7 @@ afterEvaluate {
 			create<MavenPublication>("release") {
 				from(components["release"])
 				
-				groupId = "com.github.Nenoeldeeb"
+				groupId = "com.github.dsc-jkuat"
 				artifactId = "form-builder"
 				version = libs.versions.libVersionName.get()
 			}
