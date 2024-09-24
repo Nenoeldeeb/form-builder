@@ -10,7 +10,10 @@ $dokka.location:com.dsc.form_builder.format/DateFormat.MMDDYYYY///PointingToDecl
 $dokka.location:com.dsc.form_builder.format/DateFormat.YYMMDD///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}form-builder/com.dsc.form_builder.format/-date-format/-y-y-m-m-d-d/index.html
 $dokka.location:com.dsc.form_builder.format/DateFormat.YYYYDDMM///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}form-builder/com.dsc.form_builder.format/-date-format/-y-y-y-y-d-d-m-m/index.html
 $dokka.location:com.dsc.form_builder.format/DateFormat///PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-format/index.html
+$dokka.location:com.dsc.form_builder.format/DateFormat/entries/#/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-format/entries.html
 $dokka.location:com.dsc.form_builder.format/DateFormat/pattern/#/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-format/pattern.html
+$dokka.location:com.dsc.form_builder.format/DateFormat/valueOf/#kotlin.String/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-format/value-of.html
+$dokka.location:com.dsc.form_builder.format/DateFormat/values/#/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-format/values.html
 $dokka.location:com.dsc.form_builder.format/DateFormatter///PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-formatter/index.html
 $dokka.location:com.dsc.form_builder.format/DateFormatter/DateFormatter/#com.dsc.form_builder.format.DateFormat#kotlin.String/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-formatter/-date-formatter.html
 $dokka.location:com.dsc.form_builder.format/DateFormatter/format/#kotlin.String/PointingToDeclaration/form-builder/com.dsc.form_builder.format/-date-formatter/format.html
@@ -49,6 +52,11 @@ $dokka.location:com.dsc.form_builder/SelectState/select/#kotlin.String/PointingT
 $dokka.location:com.dsc.form_builder/SelectState/unselect/#kotlin.String/PointingToDeclaration/form-builder/com.dsc.form_builder/-select-state/unselect.html
 $dokka.location:com.dsc.form_builder/SelectState/validate/#/PointingToDeclaration/form-builder/com.dsc.form_builder/-select-state/validate.html
 $dokka.location:com.dsc.form_builder/SelectState/value/#/PointingToDeclaration/form-builder/com.dsc.form_builder/-select-state/value.html
+$dokka.location:com.dsc.form_builder/SwitchState///PointingToDeclaration/form-builder/com.dsc.form_builder/-switch-state/index.html
+$dokka.location:com.dsc.form_builder/SwitchState/SwitchState/#kotlin.String#kotlin.Boolean#com.dsc.form_builder.Transform[kotlin.Boolean]?#kotlin.collections.List[com.dsc.form_builder.Validators]/PointingToDeclaration/form-builder/com.dsc.form_builder/-switch-state/-switch-state.html
+$dokka.location:com.dsc.form_builder/SwitchState/toggle/#/PointingToDeclaration/form-builder/com.dsc.form_builder/-switch-state/toggle.html
+$dokka.location:com.dsc.form_builder/SwitchState/validate/#/PointingToDeclaration/form-builder/com.dsc.form_builder/-switch-state/validate.html
+$dokka.location:com.dsc.form_builder/SwitchState/value/#/PointingToDeclaration/form-builder/com.dsc.form_builder/-switch-state/value.html
 $dokka.location:com.dsc.form_builder/TextFieldState///PointingToDeclaration/form-builder/com.dsc.form_builder/-text-field-state/index.html
 $dokka.location:com.dsc.form_builder/TextFieldState/TextFieldState/#kotlin.String#kotlin.String#com.dsc.form_builder.Transform[kotlin.String]?#kotlin.collections.List[com.dsc.form_builder.Validators]#com.dsc.form_builder.format.Formatter?/PointingToDeclaration/form-builder/com.dsc.form_builder/-text-field-state/-text-field-state.html
 $dokka.location:com.dsc.form_builder/TextFieldState/change/#kotlin.String/PointingToDeclaration/form-builder/com.dsc.form_builder/-text-field-state/change.html
