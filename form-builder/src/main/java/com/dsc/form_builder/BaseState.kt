@@ -70,6 +70,22 @@ abstract class BaseState<T>(
     }
 
     /**
+     *Change the field value to the specified data.
+     *
+     * @param data the data to set the value to.
+     * @throws IllegalArgumentException If the data type doesn't match the type of the value property.
+     * does not match the type of the initial value.
+     */
+    open fun setData(data: Any) {
+        requireNotNull(initial)
+        require(data::class.simpleName == initial!!::class.simpleName) {
+            "Input type must be ${initial!!::class.simpleName}"
+        }
+        @Suppress("UNCHECKED_CAST")
+        value = data as T
+    }
+
+    /**
      * This function resets all form field values to their initial states.
      */
     fun reset() {
