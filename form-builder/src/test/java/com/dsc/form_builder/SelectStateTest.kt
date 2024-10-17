@@ -68,5 +68,26 @@ internal class SelectStateTest {
             val actual = classToTest.validateMax(max, "expected validation: $expected")
             assert(actual == expected)
         }
+
+        @Test
+        fun `setData works correctly`() {
+            val value = mutableListOf(
+                "item 1",
+                "item 2"
+            )
+            classToTest.setData(value)
+            assert(classToTest.value == value)
+        }
+
+        @Test
+        fun `setData fails with incorrect data type`() {
+            val value = "item 1"
+
+            assert(
+                runCatching {
+                    classToTest.setData(value)
+                }.isFailure
+            )
+        }
     }
 }

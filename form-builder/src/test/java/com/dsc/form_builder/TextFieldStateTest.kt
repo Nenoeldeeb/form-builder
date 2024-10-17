@@ -134,5 +134,12 @@ internal class TextFieldStateTest {
             val actual = classToTest.validateDate("expected validation: $expected", pattern)
             assert(actual == expected)
         }
+
+        @Test
+        fun `setData works correctly`() {
+            val value = "test"
+            classToTest.setData(value)
+            assert(classToTest.value == value)
+        }
     }
 }
