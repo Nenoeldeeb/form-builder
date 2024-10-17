@@ -11,7 +11,8 @@ internal class FormStateTest {
         val gender: String,
         val age: String,
         val active: Boolean,
-        private val date: Int = 0
+        private val date: Int = 0,
+        val password: String? = null
     )
 
 	@Nested
@@ -76,7 +77,7 @@ internal class FormStateTest {
         @Test
         fun `setData should set the correct values`() {
             val data = FormTestDataClass(
-                email = "buider@gmail.com",
+                email = "testset@form.com",
                 hobbies = listOf(
                     "Running",
                     "Reading"
@@ -84,7 +85,8 @@ internal class FormStateTest {
                 gender = "male",
                 age = "56",
                 active = true,
-                date = 12
+                date = 12,
+                password = "123"
             )
             formState.setData(data)
 

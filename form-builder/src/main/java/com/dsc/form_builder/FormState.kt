@@ -60,8 +60,9 @@ open class FormState<T : BaseState<*>>(val fields: List<T>) {
         }
         data::class.memberProperties.forEach { property ->
             if (property.visibility.toString() != "PRIVATE") {
-                val value = property.call(data)
-                fields.find { it.name == property.name }?.setData(value!!)
+                property.call(data)?.let { value ->
+                    fields.find { it.name == property.name }?.setData(value)
+                }
             }
         }
     }
